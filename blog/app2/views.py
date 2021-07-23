@@ -6,3 +6,4 @@ from .models import Post, Author
 def Index(request):
     post=Post.objects.all()
     return render(request, "index.html",{"post" : post})
+

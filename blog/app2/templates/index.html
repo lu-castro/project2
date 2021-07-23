@@ -1,6 +1,7 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
-    {% for post in post %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">    
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,29 +9,42 @@
     <title>Index</title>
 </head>
 <body>
-    <!--Navbar-->
-    <div class="navbar_class">
-        <ul>
-          <li class="active">Home</li>
-          <li>Profile</li>
-          <li>Notifications</li>
-          <li>Setting</li>
-          <li>Help</li>
-          <li>Password</li>
-          <li>Sign Out</li>
-        </ul>
-      </div>
 
-    <h1>Welcome</h1>
-    <h3>Here you have my posts:</h3>
+    <!--Top Navbar-->
+    <div class="top_nav">
+        
+    </div>
 
-    <!--Post-->
-    <div>
-        <ul>{{post.title}}</ul>
-        <img src="{{post.image.url}}" alt="post_image">
+    <!--Bottom Navbar-->
+    <div class="bottom_nav">
+        <div class="logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Intel-logo.svg/2000px-Intel-logo.svg.png" alt="" width="130"/>
+          </div>
+        <nav>
+          <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#about">About</a></li>
+          </ul>
+          </nav>
+        </div>
+        <hr />
+
+     <!--Post-->
+    {% for post in post %}
+    {% block content %}
+    <div class="post_container">
+        <ul><h3>{{post.title}}</h3></ul>
+        <img src="{{post.image.url}}" alt="{{post.title}}" width="50%">
         <p>{{post.text}}</p>
     </div>
-    
-</body>
+    {% endblock %} 
     {% endfor %}
+
+    <!--Footer-->
+    <div class="footer">
+
+    </div>
+
+</body>
 </html>
