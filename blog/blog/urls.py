@@ -17,11 +17,13 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
-from app2.views import Index
+from app2.views import Index, About, News
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Index),
+    path('about/', About), 
+    path('news/', News)
 ]
 
 if settings.DEBUG:

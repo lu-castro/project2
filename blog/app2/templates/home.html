@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+{% block content %}
+ <!--Post-->
+ <div class="post_container">
+    <ul><h3>{{post.title}}</h3></ul>
+    <img src="{{post.image.url}}" alt="{{post.title}}" width="50%">
+    <p>{{post.text}}</p>
+</div>
+{% endblock %}

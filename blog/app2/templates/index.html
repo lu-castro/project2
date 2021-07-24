@@ -12,7 +12,6 @@
 
     <!--Top Navbar-->
     <div class="top_nav">
-        
     </div>
 
     <!--Bottom Navbar-->
@@ -23,16 +22,16 @@
         <nav>
           <ul>
           <li><a href="#">Home</a></li>
-          <li><a href="#news">News</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="news.html">News</a></li>
           </ul>
           </nav>
         </div>
         <hr />
 
-     <!--Post-->
     {% for post in post %}
     {% block content %}
+    <!--Post-->
     <div class="post_container">
         <ul><h3>{{post.title}}</h3></ul>
         <img src="{{post.image.url}}" alt="{{post.title}}" width="50%">
