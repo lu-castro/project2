@@ -21,9 +21,9 @@ from app2.views import Index, About, News
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', Index),
-    path('about/', About), 
-    path('news/', News)
+    path('index/', Index, name='index'),
+    path('about/', About, name='about'),
+    path('news//', News, name='news'),
 ]
 
 if settings.DEBUG:
